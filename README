@@ -1,13 +1,17 @@
 Removing final keyword from bytecode, to enable mocking final classes
 
-mock-final.sh will:
+To run:
+    ant mock-final
+
+Which will:
 
 clean everything
 compile the source
 run a class to manipulate the bytecode of a final class
-create a new class file with a different name for the manipulated bytecode
-run a test mocking that new class
+rewrite the class file
+run a test, mocking the "final" class
 
 To do:
 
 Incorporate fudging into classloading
+Integrate with eclipse

@@ -8,12 +8,13 @@ import com.boothj5.mockfinal.subjects.FinalSubject;
 
 public class RemoveFinal {
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) throws Exception {
+        System.out.println();
+        System.out.println("MOCK-FINAL --> Starting") ;
+        System.out.println() ;
+        
         final String className = FinalSubject.class.getCanonicalName() ;
-        System.out.println("Processing class: " + className);
+        System.out.println("** Removing final from class: " + className);
         ClassPool pool = ClassPool.getDefault();
         CtClass cc = pool.get(className);
 
@@ -23,14 +24,11 @@ public class RemoveFinal {
             cc.setModifiers(notFinalModifier);
         }
         
-        if (Modifier.isFinal(cc.getModifiers())) {
-            throw new IllegalStateException("Class '" + className + "' is not final?!?");
-        }
-        
-        cc.setName("com.boothj5.mockfinal.subjects.FudgedFinalSubject") ;
         cc.writeFile("/home/james/projects-git/mock-final/bin/");
-        System.out.println("Fudged " + cc.getName());
+        System.out.println("** Fudged " + cc.getName());
         System.out.println();
+        System.out.println("MOCK-FINAL --> Done") ;
+        System.out.println() ;
 
     }
 

@@ -3,10 +3,8 @@ package com.boothj5.mockfinal.subjects;
 import static org.junit.Assert.*;
 
 import static org.mockito.Mockito.mock ;
-import static org.mockito.Mockito.when ;
-import static org.mockito.Mockito.verify ;
+import static org.mockito.Mockito.when;
 
-import org.junit.Before;
 import org.junit.Test;
 
 public class NonFinalSubjectTest {
@@ -20,7 +18,7 @@ public class NonFinalSubjectTest {
     @Test
     public void mockSubject() {
         final NonFinalSubject subject = mock(NonFinalSubject.class) ;
-        assertTrue(true) ;
-    }
+        when(subject.getStringField()).thenReturn("hi") ;
+        assertEquals("hi", subject.getStringField()) ;    }
     
 }

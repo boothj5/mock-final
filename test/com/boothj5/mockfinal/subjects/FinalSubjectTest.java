@@ -3,13 +3,8 @@ package com.boothj5.mockfinal.subjects;
 import static org.junit.Assert.*;
 
 import static org.mockito.Mockito.mock ;
-import static org.mockito.Mockito.when ;
-import static org.mockito.Mockito.verify ;
-import javassist.ClassPool;
-import javassist.CtClass;
-import javassist.Modifier;
+import static org.mockito.Mockito.when;
 
-import org.junit.Before;
 import org.junit.Test;
 
 public class FinalSubjectTest {
@@ -22,8 +17,8 @@ public class FinalSubjectTest {
     
     @Test
     public void mockSubject() throws Exception {
-        final FudgedFinalSubject subject = mock(FudgedFinalSubject.class) ;
-        subject.setStringField("hi") ;
-        assertTrue(true) ;
+        final FinalSubject subject = mock(FinalSubject.class) ;
+        when(subject.getStringField()).thenReturn("hi") ;
+        assertEquals("hi", subject.getStringField()) ;
     }
 }
