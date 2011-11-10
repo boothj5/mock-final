@@ -15,3 +15,4 @@ To do:
 
 Incorporate fudging into classloading
 Integrate with eclipse
+Try extending mockito to remove final when starting JVM in debug
